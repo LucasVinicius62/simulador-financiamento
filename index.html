@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Financiamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f2f2f2;
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    h2 {
+      text-align: center;
+    }
+    #resultado {
+      font-weight: bold;
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Simulador de Financiamento</h2>
+
+  <label>Valor Total do Bem (R$):</label>
+  <input type="number" id="valor" placeholder="Ex: 30000">
+
+  <label>Valor de Entrada (R$):</label>
+  <input type="number" id="entrada" placeholder="Ex: 5000">
+
+  <label>Taxa de Juros Mensal (%):</label>
+  <input type="number" id="juros" placeholder="Ex: 2">
+
+  <label>Número de Parcelas:</label>
+  <input type="number" id="parcelas" placeholder="Ex: 48">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcular() {
+      const valor = parseFloat(document.getElementById('valor').value);
+      const entrada = parseFloat(document.getElementById('entrada').value);
+      const juros = parseFloat(document.getElementById('juros').value) / 100;
+      const parcelas = parseInt(document.getElementById('parcelas').value);
+
+      const resultado = document.getElementById('resultado');
+
+      if (isNaN(valor) || isNaN(entrada) || isNaN(juros) || isNaN(parcelas)) {
+        resultado.innerHTML = '⚠️ Preencha todos os campos corretamente.';
+        return;
+      }
+
+      if (entrada > valor) {
+        resultado.innerHTML = '⚠️ O valor de entrada não pode ser maior que o valor total.';
+        return;
+      }
+
+      const valorFinanciado = valor - entrada;
+
+      // Fórmula da Tabela PRICE
+      const parcela = valorFinanciado * (juros * Math.pow(1 + juros, parcelas)) / (Math.pow(1 + juros, parcelas) - 1);
+      const totalPago = parcela * parcelas;
+
+      resultado.innerHTML = `
+        <p>Valor Financiado: <strong>R$ ${valorFinanciado.toFixed(2)}</strong></p>
+        <p>Valor da Parcela: <strong>R$ ${parcela.toFixed(2)}</strong></p>
+        <p>Total Pago ao Final: <strong>R$ ${totalPago.toFixed(2)}</strong></p>
+      `;
+    }
+  </script>
+</body>
+</html>
