@@ -19,7 +19,7 @@
       padding: 10px;
       font-size: 16px;
     }
-    h2 {
+    h2, h3 {
       text-align: center;
     }
     #resultado {
@@ -28,6 +28,17 @@
       background: #fff;
       padding: 15px;
       border-radius: 8px;
+    }
+    footer {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+    footer h3 {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -50,6 +61,15 @@
 
   <div id="resultado"></div>
 
+  <footer>
+    <h3>Sobre</h3>
+    <p>Este simulador de financiamento foi criado com o objetivo de ajudar usuários a calcularem o valor aproximado das parcelas de um financiamento, com base em juros mensais e número de parcelas. É uma ferramenta simples e gratuita para uso pessoal.</p>
+
+    <h3>Política de Privacidade</h3>
+    <p>Este site não coleta, armazena ou compartilha quaisquer dados pessoais dos usuários. As informações inseridas no simulador são processadas localmente, sem envio para servidores externos.</p>
+    <p>Ao utilizar este simulador, você concorda com os termos descritos nesta política.</p>
+  </footer>
+
   <script>
     function calcular() {
       const valor = parseFloat(document.getElementById('valor').value);
@@ -70,8 +90,6 @@
       }
 
       const valorFinanciado = valor - entrada;
-
-      // Fórmula da Tabela PRICE
       const parcela = valorFinanciado * (juros * Math.pow(1 + juros, parcelas)) / (Math.pow(1 + juros, parcelas) - 1);
       const totalPago = parcela * parcelas;
 
