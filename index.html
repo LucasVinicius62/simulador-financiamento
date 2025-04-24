@@ -7,15 +7,16 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2280978161486260"
      crossorigin="anonymous"></script>
      <meta name="google-site-verification" content="2uR9lCrC0g-Sf5qM-Knp7rbce7QQssD0iqHFSIhgfxs" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f2f2f2;
-      border-radius: 10px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f2f2f2;
+}
+
     input, button {
       width: 100%;
       margin: 10px 0;
@@ -43,26 +44,90 @@
     footer h3 {
       margin-top: 20px;
     }
+    .conteudo-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.bloco-texto, .bloco-formulario {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 300px;
+}
+
+.bloco-texto {
+  max-width: 45%;
+}
+
+.bloco-formulario {
+  max-width: 50%;
+}
+.campo-icone {
+  position: relative;
+  margin: 10px 0;
+}
+
+.campo-icone i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 16px;
+}
+
+.campo-icone input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
   </style>
 </head>
 <body>
-  <h2>Simulador de Financiamento</h2>
+  <div class="conteudo-principal">
+    <!-- Bloco de texto -->
+    <div class="bloco-texto">
+      <h2>Simulador de Financiamento</h2>
+      <p>Use este simulador para calcular suas parcelas de financiamento com entrada, juros e número de parcelas desejadas.</p>
+  
+      <section>
+        <h3>Como funciona o simulador</h3>
+        <p>Nosso simulador permite calcular o valor das parcelas com base na taxa de juros e prazo definidos. Ideal para planejamento de compras de veículos, imóveis ou outros bens financiados.</p>
+      </section>
+    </div>
+  
+    <!-- Bloco do formulário -->
+<div class="bloco-formulario">
+  <div class="campo-icone">
+    <i class="fas fa-car"></i>
+    <input type="number" id="valor" placeholder="Valor Total do Bem (R$)">
+  </div>
 
-  <label>Valor Total do Bem (R$):</label>
-  <input type="number" id="valor" placeholder="Ex: 30000">
+  <div class="campo-icone">
+    <i class="fas fa-hand-holding-usd"></i>
+    <input type="number" id="entrada" placeholder="Valor de Entrada (R$)">
+  </div>
 
-  <label>Valor de Entrada (R$):</label>
-  <input type="number" id="entrada" placeholder="Ex: 5000">
+  <div class="campo-icone">
+    <i class="fas fa-percent"></i>
+    <input type="number" id="juros" placeholder="Taxa de Juros Mensal (%)">
+  </div>
 
-  <label>Taxa de Juros Mensal (%):</label>
-  <input type="number" id="juros" placeholder="Ex: 2">
-
-  <label>Número de Parcelas:</label>
-  <input type="number" id="parcelas" placeholder="Ex: 48">
+  <div class="campo-icone">
+    <i class="fas fa-calendar-alt"></i>
+    <input type="number" id="parcelas" placeholder="Número de Parcelas">
+  </div>
 
   <button onclick="calcular()">Calcular</button>
 
   <div id="resultado"></div>
+  </div>
 
   <!-- Anúncio Google após o conteúdo -->
 <ins class="adsbygoogle"
@@ -73,27 +138,20 @@ data-ad-format="auto"
 data-full-width-responsive="true"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-  <footer>
-    <section>
-      <h3>Como funciona o simulador</h3>
-      <p>Nosso simulador de financiamento permite calcular o valor das parcelas com base na taxa de juros e prazo definidos. Ideal para planejamento de compras de veículos, imóveis ou outros bens financiados.</p>
-    </section>
+</script>  
     
-    <footer style="margin-top: 40px; font-size: 14px; text-align: center;">
-      <a href="politica.html">Política de Privacidade</a> | 
-      <a href="sobre.html">Sobre</a>
-    </footer>
-    
-    <h3>Sobre</h3>
-    <p>Este simulador de financiamento foi criado com o objetivo de ajudar usuários a calcularem o valor aproximado das parcelas de um financiamento, com base em juros mensais e número de parcelas. É uma ferramenta simples e gratuita para uso pessoal.</p>
+<footer style="margin-top: 40px; font-size: 14px; text-align: center;">
+  <a href="politica.html">Política de Privacidade</a> | 
+  <a href="sobre.html">Sobre</a>
 
-    <h3>Política de Privacidade</h3>
-    <p>Este site não coleta, armazena ou compartilha quaisquer dados pessoais dos usuários. As informações inseridas no simulador são processadas localmente, sem envio para servidores externos.</p>
-    <p>Ao utilizar este simulador, você concorda com os termos descritos nesta política.</p>
-  </footer>
+  <h3>Sobre</h3>
+  <p>Este simulador de financiamento foi criado com o objetivo de ajudar usuários a calcularem o valor aproximado das parcelas de um financiamento, com base em juros mensais e número de parcelas. É uma ferramenta simples e gratuita para uso pessoal.</p>
+
+  <h3>Política de Privacidade</h3>
+  <p>Este site não coleta, armazena ou compartilha quaisquer dados pessoais dos usuários. As informações inseridas no simulador são processadas localmente, sem envio para servidores externos.</p>
+  <p>Ao utilizar este simulador, você concorda com os termos descritos nesta política.</p>
+</footer>
+
 
   <script>
     function calcular() {
