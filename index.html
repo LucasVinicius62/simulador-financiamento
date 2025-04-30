@@ -86,102 +86,148 @@ body {
   box-sizing: border-box;
 }
 
+.secao-informativa {
+  background: #d8ecff; /* cor pastel suave */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
 
   </style>
 </head>
 <body>
+  <header style="text-align: center; margin-bottom: 20px;">
+    <img src="sua-logo.png" alt="Logo do Simulador" style="max-height: 80px;">
+  </header>
+  
   <div class="conteudo-principal">
     <!-- Bloco de texto -->
     <div class="bloco-texto">
       <h2>Simulador de Financiamento</h2>
       <p>Use este simulador para calcular suas parcelas de financiamento com entrada, juros e número de parcelas desejadas.</p>
-  
-      <section>
+
+      <section class="secao-informativa">
         <h3>Como funciona o simulador</h3>
         <p>Nosso simulador permite calcular o valor das parcelas com base na taxa de juros e prazo definidos. Ideal para planejamento de compras de veículos, imóveis ou outros bens financiados.</p>
       </section>
+      
+      <section class="secao-informativa">
+        <h3><i class="fas fa-info-circle"></i> Fatores que influenciam a taxa de juros</h3>
+        <ul>
+          <li><strong>Perfil do comprador:</strong> histórico de crédito, score e renda influenciam a taxa oferecida.</li>
+          <li><strong>Prazo de pagamento:</strong> financiamentos mais longos tendem a ter taxas maiores.</li>
+          <li><strong>Tipo de bem financiado:</strong> veículos novos geralmente têm taxas menores do que usados; imóveis têm condições específicas.</li>
+          <li><strong>Instituição financeira:</strong> bancos e financeiras diferentes oferecem taxas diferentes.</li>
+          <li><strong>Condições de mercado:</strong> taxas podem variar com a inflação, Selic e políticas econômicas.</li>
+        </ul>
+      </section>
+      <section class="secao-informativa">
+        <h3>Principais Instituições que Oferecem Financiamento</h3>
+        <p>Diversas instituições financeiras oferecem crédito para aquisição de veículos, imóveis e outros bens. Abaixo listamos algumas das mais conhecidas no mercado brasileiro:</p>
+        <ul>
+          <li>Banco do Brasil</li>
+          <li>Caixa Econômica Federal</li>
+          <li>Bradesco</li>
+          <li>Itaú Unibanco</li>
+          <li>Santander</li>
+          <li>BV Financeira</li>
+          <li>Banco PAN</li>
+          <li>Porto Seguro Financeira</li>
+          <li>Safra</li>
+          <li>Daycoval</li>
+        </ul>
+        <p><strong>Obs.:</strong> Esta lista é meramente informativa e não representa parceria ou vínculo com as instituições citadas. Para simulações oficiais, consulte diretamente os canais das financeiras.</p>
+      </section>
+
+      
+      <!-- Anúncio agora com mais conteúdo acima -->
+      <ins class="adsbygoogle"
+        style="display:block; text-align:center; margin: 20px 0;"
+        data-ad-client="ca-pub-2280978161486260"
+        data-ad-slot="9683342228"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
-  
+
     <!-- Bloco do formulário -->
-<div class="bloco-formulario">
-  <div class="campo-icone">
-    <i class="fas fa-car"></i>
-    <input type="number" id="valor" placeholder="Valor Total do Bem (R$)">
-  </div>
+    <div class="bloco-formulario">
+      <div class="campo-icone">
+        <i class="fas fa-car"></i>
+        <input type="number" id="valor" placeholder="Valor Total do Bem (R$)">
+      </div>
 
-  <div class="campo-icone">
-    <i class="fas fa-hand-holding-usd"></i>
-    <input type="number" id="entrada" placeholder="Valor de Entrada (R$)">
-  </div>
+      <div class="campo-icone">
+        <i class="fas fa-hand-holding-usd"></i>
+        <input type="number" id="entrada" placeholder="Valor de Entrada (R$)">
+      </div>
 
-  <div class="campo-icone">
-    <i class="fas fa-percent"></i>
-    <input type="number" id="juros" placeholder="Taxa de Juros Mensal (%)">
-  </div>
+      <div class="campo-icone">
+        <i class="fas fa-percent"></i>
+        <input type="number" id="juros" placeholder="Taxa de Juros Mensal (%)">
+      </div>
 
-  <div class="campo-icone">
-    <i class="fas fa-calendar-alt"></i>
-    <input type="number" id="parcelas" placeholder="Número de Parcelas">
-  </div>
+      <div class="campo-icone">
+        <i class="fas fa-calendar-alt"></i>
+        <input type="number" id="parcelas" placeholder="Número de Parcelas">
+      </div>
 
-  <button onclick="calcular()">Calcular</button>
+      <button onclick="calcular()">Calcular</button>
 
-  <div id="resultado"></div>
-  </div>
+      <!-- ✅ Resultado com exemplo visível por padrão -->
+      <div id="resultado">
+        <p>Valor Financiado: <strong>R$ 20.000,00</strong></p>
+        <p>Valor da Parcela: <strong>R$ 1.050,00</strong></p>
+        <p>Total Pago ao Final: <strong>R$ 25.200,00</strong></p>
+      </div>
+    </div>
 
-  <!-- Anúncio Google após o conteúdo -->
-<ins class="adsbygoogle"
-style="display:block; text-align:center; margin: 20px 0;"
-data-ad-client="ca-pub-2280978161486260"
-data-ad-slot="9683342228" 
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>  
+    <!-- 🔁 Anúncio REMOVIDO daqui -->
     
-<footer style="margin-top: 40px; font-size: 14px; text-align: center;">
-  <a href="politica.html">Política de Privacidade</a> | 
-  <a href="sobre.html">Sobre</a>
+    <footer style="margin-top: 40px; font-size: 14px; text-align: center;">
+      <a href="politica.html">Política de Privacidade</a> | 
+      <a href="sobre.html">Sobre</a>
 
-  <h3>Sobre</h3>
-  <p>Este simulador de financiamento foi criado com o objetivo de ajudar usuários a calcularem o valor aproximado das parcelas de um financiamento, com base em juros mensais e número de parcelas. É uma ferramenta simples e gratuita para uso pessoal.</p>
+      <h3>Sobre</h3>
+      <p>Este simulador de financiamento foi criado com o objetivo de ajudar usuários a calcularem o valor aproximado das parcelas de um financiamento, com base em juros mensais e número de parcelas. É uma ferramenta simples e gratuita para uso pessoal.</p>
 
-  <h3>Política de Privacidade</h3>
-  <p>Este site não coleta, armazena ou compartilha quaisquer dados pessoais dos usuários. As informações inseridas no simulador são processadas localmente, sem envio para servidores externos.</p>
-  <p>Ao utilizar este simulador, você concorda com os termos descritos nesta política.</p>
-</footer>
+      <h3>Política de Privacidade</h3>
+      <p>Este site não coleta, armazena ou compartilha quaisquer dados pessoais dos usuários. As informações inseridas no simulador são processadas localmente, sem envio para servidores externos.</p>
+      <p>Ao utilizar este simulador, você concorda com os termos descritos nesta política.</p>
+    </footer>
 
+    <script>
+      function calcular() {
+        const valor = parseFloat(document.getElementById('valor').value);
+        const entrada = parseFloat(document.getElementById('entrada').value);
+        const juros = parseFloat(document.getElementById('juros').value) / 100;
+        const parcelas = parseInt(document.getElementById('parcelas').value);
 
-  <script>
-    function calcular() {
-      const valor = parseFloat(document.getElementById('valor').value);
-      const entrada = parseFloat(document.getElementById('entrada').value);
-      const juros = parseFloat(document.getElementById('juros').value) / 100;
-      const parcelas = parseInt(document.getElementById('parcelas').value);
+        const resultado = document.getElementById('resultado');
 
-      const resultado = document.getElementById('resultado');
+        if (isNaN(valor) || isNaN(entrada) || isNaN(juros) || isNaN(parcelas)) {
+          resultado.innerHTML = '⚠️ Preencha todos os campos corretamente.';
+          return;
+        }
 
-      if (isNaN(valor) || isNaN(entrada) || isNaN(juros) || isNaN(parcelas)) {
-        resultado.innerHTML = '⚠️ Preencha todos os campos corretamente.';
-        return;
+        if (entrada > valor) {
+          resultado.innerHTML = '⚠️ O valor de entrada não pode ser maior que o valor total.';
+          return;
+        }
+
+        const valorFinanciado = valor - entrada;
+        const parcela = valorFinanciado * (juros * Math.pow(1 + juros, parcelas)) / (Math.pow(1 + juros, parcelas) - 1);
+        const totalPago = parcela * parcelas;
+
+        resultado.innerHTML = `
+  <p>Valor Financiado: <strong>${valorFinanciado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
+  <p>Valor da Parcela: <strong>${parcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
+  <p>Total Pago ao Final: <strong>${totalPago.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></p>
+`;
       }
-
-      if (entrada > valor) {
-        resultado.innerHTML = '⚠️ O valor de entrada não pode ser maior que o valor total.';
-        return;
-      }
-
-      const valorFinanciado = valor - entrada;
-      const parcela = valorFinanciado * (juros * Math.pow(1 + juros, parcelas)) / (Math.pow(1 + juros, parcelas) - 1);
-      const totalPago = parcela * parcelas;
-
-      resultado.innerHTML = `
-        <p>Valor Financiado: <strong>R$ ${valorFinanciado.toFixed(2)}</strong></p>
-        <p>Valor da Parcela: <strong>R$ ${parcela.toFixed(2)}</strong></p>
-        <p>Total Pago ao Final: <strong>R$ ${totalPago.toFixed(2)}</strong></p>
-      `;
-    }
-  </script>
+    </script>
 </body>
 </html>
